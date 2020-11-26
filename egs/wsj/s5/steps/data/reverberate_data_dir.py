@@ -438,8 +438,7 @@ def CreateReverberatedCopy(input_dir,
     if os.path.isfile(input_dir + "/reco2file_and_channel"):
         AddPrefixToFields(input_dir + "/reco2file_and_channel", output_dir + "/reco2file_and_channel", num_replicas, include_original, prefix, field = [0,1])
 
-    data_lib.RunKaldiCommand("utils/validate_data_dir.sh --no-feats --no-text {output_dir}"
-                    .format(output_dir = output_dir))
+    data_lib.RunKaldiCommand("utils/validate_data_dir.sh --no-feats --no-text {output_dir}".format(output_dir = output_dir))
 
 
 # This function smooths the probability distribution in the list

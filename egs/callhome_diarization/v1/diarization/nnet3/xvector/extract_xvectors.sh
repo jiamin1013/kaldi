@@ -39,6 +39,7 @@ echo "$0 $@"  # Print the command line for logging
 
 if [ -f path.sh ]; then . ./path.sh; fi
 . parse_options.sh || exit 1;
+echo $stage
 
 
 if [ $# != 3 ]; then

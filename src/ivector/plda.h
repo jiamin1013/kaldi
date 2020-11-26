@@ -122,6 +122,24 @@ class Plda {
                             const VectorBase<double> &transformed_test_ivector)
                             const;
 
+  /// TODO: Extended function written by myself
+  /// Returns the denominator of a log-likelihood ratio
+  /// log p(test_ivector | different)).
+  /// Note: any length normalization will have been done while computing
+  /// the transformed iVectors.
+  /// transformed_train_vector is no longer needed under this function
+  double LLRWoClass(const VectorBase<double> &transformed_train_ivector,
+                            int32 num_train_utts,
+                            const VectorBase<double> &transformed_test_ivector)
+                            const;
+
+  double LogLikelihoodWithoutClass(const VectorBase<double> &transformed_test_ivector) const;
+
+  double LogLikelihoodWithinClass(const VectorBase<double> &transformed_train_ivector,
+                            int32 num_train_utts,
+                            const VectorBase<double> &transformed_test_ivector)
+                            const;
+
 
   /// This function smooths the within-class covariance by adding to it,
   /// smoothing_factor (e.g. 0.1) times the between-class covariance (it's
